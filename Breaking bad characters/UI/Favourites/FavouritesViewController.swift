@@ -89,8 +89,7 @@ extension FavouritesViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         selectedItemIndex = indexPath.row
+        tableView.deselectRow(at: indexPath, animated: true)
         performSegue(withIdentifier: Constants.shared.fromFavouritesToDetail, sender: self)
     }
 }
-
-

@@ -42,10 +42,12 @@ class DetailViewController: UIViewController {
     private func prepareTextView() {
         guard let charakterInformation = charakterInformation else { return }
         
+        let appearanceString = (charakterInformation.appearance.map { String($0)}).joined(separator: ", ")
+        
         let name       = "\(charakterInformation.name) (\(charakterInformation.nickName))"
         let birth      = "Birth \(charakterInformation.birth) \n"
         let occupation = "Occupation: \(charakterInformation.occupation.joined(separator: "\n"))"
-        let seasons    = "Seasons: \(charakterInformation.appearance) \n"
+        let seasons    = "Seasons: \(appearanceString) \n"
         let portrayed  = "Portrayed charakterInformation.portrayed"
         
         //construct TextView

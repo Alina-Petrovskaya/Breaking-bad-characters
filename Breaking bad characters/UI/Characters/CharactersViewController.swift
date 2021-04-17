@@ -81,6 +81,7 @@ extension CharactersViewController: UICollectionViewDataSource {
 extension CharactersViewController: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
         selectedItemIndex = indexPath.row
         performSegue(withIdentifier: Constants.shared.fromCharactersToDetail, sender: self)
     }

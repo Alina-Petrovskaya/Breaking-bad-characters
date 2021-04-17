@@ -35,7 +35,7 @@ class DetailViewController: UIViewController {
         
         saveButton.tintColor = (FavouritesContentManager.shared.arrayOfCharacters.firstIndex(where: { (character) -> Bool in
             character.id == charakterInformation?.id
-            }) != nil) ? #colorLiteral(red: 0.9529411793, green: 0.4364395661, blue: 0.1333333403, alpha: 1) : #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+            }) != nil) ? #colorLiteral(red: 0.1764705926, green: 0.4980392158, blue: 0.7568627596, alpha: 1) : #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
     }
     
     
@@ -88,7 +88,7 @@ class DetailViewController: UIViewController {
     
     @IBAction func addToFavouritesTapped(_ sender: UIBarButtonItem) {
         
-        if saveButton.tintColor == #colorLiteral(red: 0.9529411793, green: 0.4364395661, blue: 0.1333333403, alpha: 1) {
+        if saveButton.tintColor == #colorLiteral(red: 0.1764705926, green: 0.4980392158, blue: 0.7568627596, alpha: 1) {
             FavouritesContentManager.shared.deleteItem(character: charakterInformation?.id)
             saveButton.tintColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
             
@@ -105,7 +105,7 @@ class DetailViewController: UIViewController {
                                                           portrayed: item.portrayed)
             
             FavouritesContentManager.shared.saveItem(item: character)
-            saveButton.tintColor = #colorLiteral(red: 0.9529411793, green: 0.4364395661, blue: 0.1333333403, alpha: 1)
+            saveButton.tintColor = #colorLiteral(red: 0.1764705926, green: 0.4980392158, blue: 0.7568627596, alpha: 1)
         }
     }
 }

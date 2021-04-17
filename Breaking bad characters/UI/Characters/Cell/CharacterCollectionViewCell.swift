@@ -6,15 +6,16 @@
 //
 
 import UIKit
+import SDWebImage
 
 class CharacterCollectionViewCell: UICollectionViewCell {
-    @IBOutlet weak var characterImage: UIImageView!
-    @IBOutlet weak var name: UILabel!
+    @IBOutlet weak private var characterImage: UIImageView!
+    @IBOutlet weak private var name: UILabel!
     
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    
+    func updateUI(with imageURL: String, name: String) {
+        self.name.text       = name
+        characterImage.sd_setImage(with: URL(string: imageURL))
     }
 
 }

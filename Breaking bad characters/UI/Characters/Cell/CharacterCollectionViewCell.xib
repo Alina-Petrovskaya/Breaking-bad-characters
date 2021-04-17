@@ -21,13 +21,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="220" height="321"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="okn-8G-Med">
-                                <rect key="frame" x="0.0" y="0.0" width="220" height="264"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="okn-8G-Med" secondAttribute="height" multiplier="1:1.2" id="oVx-dZ-2VI"/>
-                                </constraints>
+                                <rect key="frame" x="0.0" y="0.0" width="220" height="280.5"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p9p-36-P3Q">
-                                <rect key="frame" x="10" y="274" width="200" height="37"/>
+                                <rect key="frame" x="10" y="290.5" width="200" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -37,7 +34,7 @@
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="p9p-36-P3Q" secondAttribute="bottom" constant="10" id="EHi-Td-QeG"/>
                             <constraint firstAttribute="trailing" secondItem="okn-8G-Med" secondAttribute="trailing" id="FLj-5e-4Le"/>
-                            <constraint firstItem="p9p-36-P3Q" firstAttribute="top" secondItem="okn-8G-Med" secondAttribute="bottom" constant="10" id="LE2-AA-Vot"/>
+                            <constraint firstItem="p9p-36-P3Q" firstAttribute="top" secondItem="okn-8G-Med" secondAttribute="bottom" constant="10" id="KgG-3u-T5h"/>
                             <constraint firstItem="okn-8G-Med" firstAttribute="top" secondItem="7BV-nv-4qc" secondAttribute="top" id="Zyk-pF-H2t"/>
                             <constraint firstItem="okn-8G-Med" firstAttribute="leading" secondItem="7BV-nv-4qc" secondAttribute="leading" id="egd-OX-R3m"/>
                             <constraint firstItem="p9p-36-P3Q" firstAttribute="leading" secondItem="7BV-nv-4qc" secondAttribute="leading" constant="10" id="gSA-Em-kcb"/>

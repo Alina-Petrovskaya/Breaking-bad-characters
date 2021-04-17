@@ -20,12 +20,26 @@ class CharacterContentBuilder {
             switch result {
             
             case .success(let ckaracters):
-                self?.characters = ckaracters
-                self?.callBack?()
+                
+                DispatchQueue.main.async {
+                    self?.characters = ckaracters
+                    self?.callBack?()
+                }
                 
             case .failure(let error):
+                DispatchQueue.main.async {
                 self?.errorAlert?(error)
+                }
             }
         }
+    }
+    
+    func buildCellContent(for row: Int, cell: CharacterCollectionViewCell?) -> UICollectionViewCell {
+        
+        if let imageURL = characters?[row].img, let name = characters?[row].name {
+            cell?.updateUI(with: imageURL, name: name)
+        }
+        
+        return cell ?? UICollectionViewCell()
     }
 }

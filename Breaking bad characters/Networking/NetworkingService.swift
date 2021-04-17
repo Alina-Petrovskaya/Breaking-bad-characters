@@ -33,10 +33,9 @@ class NetworkingService {
                 return
             }
             
-            let decoder  = DefaultDecoder<ApiResponse>()
-            let responce = decoder.decode(from: data)
+            let decoder  = DefaultDecoder()
             
-            guard let characters = responce?.characters else {
+            guard let characters = decoder.decode(from: data) else {
                 completion(.failure(ErrorDecoder.unableToDecode))
                 return
             }

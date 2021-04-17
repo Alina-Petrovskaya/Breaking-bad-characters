@@ -7,13 +7,7 @@
 
 import Foundation
 
-protocol Decoder {
-    associatedtype ReturnType: Codable
-    func decode(from data: Data?) -> ReturnType?
-}
-
-class DefaultDecoder<T: Codable>: Decoder {
-    typealias ReturnType = T
+class DefaultDecoder {
     
     let decoder: JSONDecoder
     
@@ -21,10 +15,10 @@ class DefaultDecoder<T: Codable>: Decoder {
         self.decoder = decoder
     }
     
-    func decode(from data: Data?) -> ReturnType? {
+    func decode(from data: Data?) -> [Character]? {
         guard let data = data else { return nil }
         
-        let result = try? decoder.decode(T.self, from: data)
+        let result = try? decoder.decode([Character].self, from: data)
         
         return result
     }

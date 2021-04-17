@@ -8,7 +8,7 @@
 import UIKit
 
 extension UIViewController {
-    func errorAlertShow(error: Error) {
+    func errorAlertShow(with error: Error) {
         
         let alert = UIAlertController(title: "Error", message: error.localizedDescription , preferredStyle: .alert)
         

@@ -14,6 +14,6 @@ struct FavouritesContentManagerModel: Codable {
     let nickName: String
     let birth: String
     let occupation: [String]
-    let appearance: [String]
+    let appearance: [Int]
     let portrayed: String
 }

@@ -49,6 +49,7 @@ class FavouritesContentManager {
             }
         }}
     
+    
     private func saveModel() {
         let dataFilePath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("favourutes.plist")
         

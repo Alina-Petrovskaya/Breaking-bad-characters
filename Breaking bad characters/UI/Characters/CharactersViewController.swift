@@ -6,18 +6,19 @@
 //
 
 import UIKit
+import SDWebImage
 
 class CharactersViewController: UIViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
-    var characterContentBuilder = CharacterContentBuilder()
+    private var characterContentBuilder = CharacterContentBuilder()
+    private var selectedItemIndex: Int?
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         prepareCollectionView()
-        
         characterContentBuilder.getAllCharacters()
         
         characterContentBuilder.callBack = { [weak self] in
@@ -29,19 +30,35 @@ class CharactersViewController: UIViewController {
         }
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
-        self.title = "My Title"
-    }
-    
-    
     private func prepareCollectionView() {
         collectionView.delegate = self
         collectionView.dataSource = self
         
         collectionView.register(UINib(nibName: Constants.shared.characterCell, bundle: .main),
                                 forCellWithReuseIdentifier: Constants.shared.characterCell)
-        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == Constants.shared.fromCharactersToDetail,
+           let safeIndex    = selectedItemIndex,
+           let char         = characterContentBuilder.characters?[safeIndex] {
+            
+            let imageView = UIImageView()
+            imageView.sd_setImage(with: URL(string: char.img))
+            
+            if let image = imageView.image {
+                weak var vc = segue.destination as? DetailViewController
+                
+                vc?.charakterInformation = (id: char.char_id,
+                                            image: image,
+                                            name: char.name,
+                                            nickName: char.nickname,
+                                            birth: char.birthday,
+                                            occupation: char.occupation,
+                                            appearance: char.appearance,
+                                            portrayed: char.portrayed)
+            }
+        }
     }
 }
 
@@ -63,6 +80,10 @@ extension CharactersViewController: UICollectionViewDataSource {
 // MARK: - UICollectionViewDelegate, UICollectionViewDelegateFlowLayout
 extension CharactersViewController: UICollectionViewDelegate {
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        selectedItemIndex = indexPath.row
+        performSegue(withIdentifier: Constants.shared.fromCharactersToDetail, sender: self)
+    }
 }
 
 extension CharactersViewController: UICollectionViewDelegateFlowLayout {

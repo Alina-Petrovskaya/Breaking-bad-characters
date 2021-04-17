@@ -9,19 +9,24 @@ import UIKit
 
 class FavouritesTableViewCell: UITableViewCell {
     
-    @IBOutlet weak var characterImage: UIImageView!
-    @IBOutlet weak var name: UILabel!
+    @IBOutlet weak private var characterImage: UIImageView!
+    @IBOutlet weak private var name: UILabel!
     
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        prepareUI()
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    private func prepareUI() {
+        characterImage.layer.cornerRadius = characterImage.frame.height / 2
+        contentView.layer.cornerRadius = 5
     }
     
+    func updateUI(image: Data, name: String) {
+        guard let image = UIImage(data: image) else { return }
+        
+        characterImage.image = image
+        self.name.text       = name
+    }
 }

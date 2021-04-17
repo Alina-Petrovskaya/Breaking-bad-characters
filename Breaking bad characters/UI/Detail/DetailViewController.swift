@@ -8,14 +8,18 @@
 import UIKit
 
 class DetailViewController: UIViewController {
-
+    @IBOutlet weak var characterImage: UIImageView!
+    @IBOutlet weak var characterDescription: UITextView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
     
-
+    @IBAction func addToFavouritesTapped(_ sender: UIBarButtonItem) {
+    }
+    
     /*
     // MARK: - Navigation
 

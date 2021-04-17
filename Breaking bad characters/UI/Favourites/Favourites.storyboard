@@ -33,6 +33,7 @@
                     <tabBarItem key="tabBarItem" title="" image="star" catalog="system" id="bHp-E5-jSO"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="tableView" destination="CTS-15-hyN" id="WqS-aC-Vaq"/>
                         <segue destination="hPm-8L-jBS" kind="show" identifier="FromFavouritesToDetail" id="N0P-0X-z7K"/>
                     </connections>
                 </viewController>

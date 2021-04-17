@@ -47,8 +47,15 @@
                     <navigationItem key="navigationItem" title="Detail" id="6YS-jW-88x">
                         <barButtonItem key="rightBarButtonItem" image="star" catalog="system" id="Ei0-Dk-RkN">
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="addToFavouritesTapped:" destination="OOZ-jp-Yen" id="WXr-sy-ko7"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="characterDescription" destination="GKP-Eo-gKZ" id="tJa-md-Uqe"/>
+                        <outlet property="characterImage" destination="1DG-An-0RI" id="Q2p-lK-Zwl"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bTh-qU-3qN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

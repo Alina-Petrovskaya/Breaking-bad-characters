@@ -50,6 +50,7 @@
                     <tabBarItem key="tabBarItem" title="" image="line.horizontal.3" catalog="system" selectedImage="line.horizontal.3" id="chh-zr-KEs"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="collectionView" destination="Lzh-Za-59D" id="rmo-V7-NuS"/>
                         <segue destination="sVb-ki-G9W" kind="show" identifier="FromCharactersToDetail" id="Z57-Nx-7Hx"/>
                     </connections>
                 </viewController>

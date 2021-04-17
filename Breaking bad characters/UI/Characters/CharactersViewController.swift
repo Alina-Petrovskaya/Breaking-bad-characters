@@ -10,11 +10,17 @@ import UIKit
 class CharactersViewController: UIViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
+    var characterContentBuilder = CharacterContentBuilder()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        characterContentBuilder.callBack = { [weak self] in
+            self?.collectionView.reloadData()
+        }
+        
+        
     }
     
 

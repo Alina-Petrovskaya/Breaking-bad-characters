@@ -60,7 +60,7 @@ extension FavouritesViewController: UITableViewDataSource {
     
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UITableView.automaticDimension
+        return 118
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

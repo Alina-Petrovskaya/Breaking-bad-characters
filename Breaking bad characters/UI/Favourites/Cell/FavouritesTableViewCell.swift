@@ -11,12 +11,17 @@ class FavouritesTableViewCell: UITableViewCell {
     
     @IBOutlet weak private var characterImage: UIImageView!
     @IBOutlet weak private var name: UILabel!
-    @IBOutlet weak var parentView: UIView!
     
 
     override func awakeFromNib() {
         super.awakeFromNib()
         prepareUI()
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+
+        contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8))
     }
 
     private func prepareUI() {

@@ -20,6 +20,7 @@ class DetailViewController: UIViewController {
     @IBOutlet weak private var characterDescription: UITextView!
     @IBOutlet weak private var saveButton: UIBarButtonItem!
     var charakterInformation: CharacterInformation? = nil
+    var callBack: (() -> ())?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -107,5 +108,7 @@ class DetailViewController: UIViewController {
             FavouritesContentManager.shared.saveItem(item: character)
             saveButton.tintColor = #colorLiteral(red: 0.1764705926, green: 0.4980392158, blue: 0.7568627596, alpha: 1)
         }
+        
+        callBack?()
     }
 }

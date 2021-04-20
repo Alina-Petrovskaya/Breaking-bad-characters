@@ -31,6 +31,7 @@ class CharactersViewController: UIViewController {
     }
     
     private func prepareCollectionView() {
+        
         collectionView.delegate = self
         collectionView.dataSource = self
         

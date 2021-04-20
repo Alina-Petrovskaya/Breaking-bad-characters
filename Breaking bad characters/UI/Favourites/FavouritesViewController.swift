@@ -49,6 +49,9 @@ class FavouritesViewController: UIViewController {
                                             occupation: char.occupation,
                                             appearance: char.appearance,
                                             portrayed: char.portrayed)
+                vc?.callBack = { [weak self] in
+                    self?.tableView.reloadData()
+                }
             }
         }
     }
@@ -60,7 +63,7 @@ extension FavouritesViewController: UITableViewDataSource {
     
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 118
+        return 118 //UITableView.automaticDimension
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
